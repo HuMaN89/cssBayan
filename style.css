@@ -1,0 +1,46 @@
+body {
+    background-color: #ccc;
+    font-family: 'Arial';
+}
+.accordion {
+     max-width: 800px;
+     margin: 0 auto;
+}
+.tab input,
+.tab-content {
+    display: none;
+}
+.tab { 
+    background-color: rgb(36, 151, 228);
+    color:rgb(238, 223, 8);
+    border-radius: 3px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.tab-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    font-weight: bold;
+    position: relative;
+}
+.tab-title::after {
+content: '+';
+}
+.tab-content {
+    text-align: center;
+    padding: 10px 15px;
+}
+.tab :checked + .tab-title {
+    background-color:  rgb(9, 65, 102);
+    color: #fff;
+}
+.tab :checked + .tab-title::after,
+.tab :hover + .tab-title::after {
+    content: '-';
+}
+.tab :hover ~ .tab-content,
+.tab :checked ~ .tab-content,.tab-content:hover {
+    display: block;
+}
+
