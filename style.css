@@ -1,10 +1,12 @@
 body {
   background-color: #ccc;
   font-family: "Arial";
+  font-size: 16px;
 }
 .accordion {
   max-width: 800px;
   margin: 0 auto;
+  transition: all .5 ease;
 }
 .tab input,
 .tab-content {
@@ -28,25 +30,30 @@ body {
   text-align: center;
   padding: 10px 15px;
 }
+.tab-content img{
+  max-width: 100%;
+}
 .tab :checked + .tab-title {
   background-color: rgb(9, 65, 102);
   color: #fff;
 }
-svg path {
-  stroke: red;
+.fa-circle-plus{
+    width: 10px;
+    height: 10px;
+    opacity: 0;
 }
-svg {
-  max-width: 20px;
-  max-height: 20px;
-  fill: aqua;
-  transition: all 0.1 ease;
+ 
+.tab:hover  .fa-circle-plus,
+.tab:checked  .fa-circle-plus {
+  transform: rotateZ(300deg);
+  opacity:1;
+  
+  transition: all 0.6s ease 
+
 }
-svg:hover {
-  transform: rotateZ(45deg);
-}
-.tab :hover ~ rotate-plus,
-.tab :checked ~ rotate-plus {
-  transform: rotateZ(180deg);
+.accordion:hover .fa-circle-plus {
+    
+  opacity:1;
 }
 
 .tab :hover ~ .tab-content,
